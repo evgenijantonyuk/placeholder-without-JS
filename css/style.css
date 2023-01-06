@@ -1,0 +1,73 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+}
+
+body {
+    font-family: Arial, Verdana, sans-serif;
+}
+
+h1 {
+    margin-bottom: 100px;
+}
+
+.container {
+    max-width: 1200px;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+
+.text-field {
+    width: 350px;
+    position: relative;
+    margin: 0 auto;
+}
+
+.text-field__inp {
+    width: 100%;
+    padding: 10px 0;
+    border: 0;
+    outline: none;
+    border-radius: 0;
+    appearance: none;
+    font-size: 18px;
+    border-bottom: 1px solid gray;
+    transition: boder-color .3s;
+}
+
+.text-field__inp:focus {
+    border-color: rgb(53, 53, 228);
+}
+
+.text-field__paceholder {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 10px;
+    font-size: 18px;
+    color: gray;
+    pointer-events: none; /* слой стоватся прозрачным для курсора */
+    transform-origin: left;
+    transition: top .3s, trnsform .3s, color .3s;
+}
+
+.text-field__inp:focus + .text-field__paceholder,
+.text-field__inp:not(:focus):valid + .text-field__paceholder {
+    top: -15px;
+    transform: scale(.85);
+    color: rgb(53, 53, 228);
+}
